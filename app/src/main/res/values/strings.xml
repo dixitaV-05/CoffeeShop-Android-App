@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">project1239</string>
+    <string name="choice_your_nfavourite_coffee">Choice your
+Favourite Coffee</string>
+    <string name="get_started">Get Started</string>
+    <string name="search_anything">Search anything…</string>
+    <string name="popular_coffees">Popular Coffees</string>
+    <string name="cart">Cart</string>
+    <string name="explorer">Explorer</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="my_order">My Order</string>
+    <string name="profile">Profile</string>
+    <string name="choose_your_coffee">Choose Your Coffee</string>
+    <string name="subtitle">Subtitle</string>
+
+    <string name="title">title</string>
+    <string name="currency">Currency</string>
+    <string name="enter_your_discount_code">Enter Your Discount Code</string>
+    <string name="apply">Apply</string>
+    <string name="back">Back</string>
+    <string name="default_currency_value">$-</string>
+    <string name="total">Total</string>
+    <string name="delivery">Delivery</string>
+    <string name="total_tax">Total Tax</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="proceed_to_checkout">Proceed to Checkout</string>
+</resources>

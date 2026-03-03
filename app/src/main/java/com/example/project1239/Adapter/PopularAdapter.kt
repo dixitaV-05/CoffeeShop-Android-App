@@ -1,0 +1,58 @@
+package com.example.project1239.Adapter
+
+import android.content.Context
+import android.content.Intent
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.project1239.Activity.DetailActivity
+import com.example.project1239.R
+import com.example.project1239.databinding.ViewholderCategoryBinding
+import com.example.project1239.databinding.ViewholderPopularBinding
+import com.example.project1239.domain.ItemsModel
+
+class PopularAdapter(val items: MutableList<ItemsModel>):
+RecyclerView.Adapter<PopularAdapter.Viewholder>(){
+
+
+    lateinit var context: Context
+    class Viewholder(val binding: ViewholderPopularBinding):
+        RecyclerView.ViewHolder(binding.root)
+
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): PopularAdapter.Viewholder {
+        context=parent.context
+        val binding= ViewholderPopularBinding.
+        inflate(LayoutInflater.from(context),parent,false)
+    return Viewholder(binding)
+    }
+
+    override fun onBindViewHolder(holder: PopularAdapter.Viewholder, position: Int) {
+        val item = items[position]
+        holder.binding.titleTxt.text=items[position].title
+
+        val currency = holder.itemView.context.getString(R.string.currency)
+        holder.binding.pricetxt.text = "$currency${items[position].price}"
+
+        holder.binding.subtitleTxt.text=items[position].extra.toString()
+
+        Glide.with(context)
+            .load(items[position].picUrl[0])
+            .into(holder.binding.pic)
+
+
+
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, DetailActivity::class.java)
+            intent.putExtra("object",items[position])
+            context.startActivity(intent)
+
+        }
+    }
+
+    override fun getItemCount(): Int =items.size
+}
